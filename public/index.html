@@ -4,118 +4,345 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saitabau</title>
-    <link src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js">
-    <link rel="stylesheet" href="style.css">
+    <title>Saitabau Dennis - Full Stack Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Calibre:wght@300;400;500;600;700&family=SF+Mono&display=swap');
+
+        body {
+            font-family: 'Calibre', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'SF Mono', monospace;
+        }
+
+        .bg-navy {
+            background-color: #0a192f;
+        }
+
+        .text-slate {
+            color: #8892b0;
+        }
+
+        .text-light-slate {
+            color: #ccd6f6;
+        }
+
+        .text-green {
+            color: #64ffda;
+        }
+
+        .border-green {
+            border-color: #64ffda;
+        }
+
+        .hover\:bg-green-tint:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+
+        .vertical-rl {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+      
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
 </head>
 
-<body class="flex flex-col min-h-screen text-center bg-black">
-    <div id="loader" class="fixed z-50 w-full h-full flex items-center justify-center bg-black">
-        <div class="container w-auto max-w-xs">
-            <svg id="hexagon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" class="w-full h-full block mx-auto fill-current">
-                <g fill="#111">
-                    <text id="S" transform="translate(36,33)" fill="#FCF6F5" style="opacity: 0"
-                        font-family="system-ui,Calibre-Medium, Calibre,sans-serif" font-size="50" font-weight="400"
-                        letter-spacing="4.16666603">
-                        <tspan x="0.141666985" y="33">S</tspan>
-                    </text>
-                    <path stroke="#FCF6F5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M 50, 5
-                            L 11, 27
-                            L 11, 72
-                            L 50, 95
-                            L 89, 73
-                            L 89, 28 z" />
-                </g>
-            </svg>
+<body class="bg-navy text-slate font-sans">
+    <div id="particles-js"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-40 bg-navy bg-opacity-90 px-6 py-4 md:py-6">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-green text-2xl font-bold z-50">SD</a>
+
+            <!-- Hamburger menu for mobile -->
+            <button id="menu-toggle" class="md:hidden text-green focus:outline-none z-50">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Navigation links -->
+            <div id="menu"
+                class="fixed inset-0 bg-navy bg-opacity-95 flex flex-col justify-center items-center transform translate-x-full transition-transform duration-300 ease-in-out md:relative md:inset-auto md:flex-row md:translate-x-0 md:bg-transparent md:space-x-8">
+                <a href="#about"
+                    class="nav-link text-light-slate hover:text-green transition-colors duration-300 py-3 md:py-0">
+                    <span class="text-green font-mono text-xs mr-1">01.</span> About
+                </a>
+                <a href="#work"
+                    class="nav-link text-light-slate hover:text-green transition-colors duration-300 py-3 md:py-0">
+                    <span class="text-green font-mono text-xs mr-1">02.</span> Work
+                </a>
+                <a href="#contact"
+                    class="nav-link text-light-slate hover:text-green transition-colors duration-300 py-3 md:py-0">
+                    <span class="text-green font-mono text-xs mr-1">03.</span> Contact
+                </a>
+                <a href="#"
+                    class="border border-green text-green px-4 py-2 rounded text-sm font-mono hover:bg-green-tint transition-colors duration-300 mt-4 md:mt-0">
+                    Resume
+                </a>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main class="pt-24 px-6 md:px-24 lg:px-48">
+        <section id="hero" class="min-h-screen flex flex-col justify-center">
+            <h1 class="text-green font-mono text-sm mb-5">Hi, my name is</h1>
+            <h2 class="text-5xl md:text-7xl font-bold mb-4 text-light-slate">Saitabau Dennis.</h2>
+            <h3 class="text-4xl md:text-6xl font-bold mb-8 text-slate">I build things for the web.</h3>
+            <p class="text-lg mb-12 max-w-xl">
+                As a versatile full stack developer, I excel in crafting (and sometimes designing) outstanding digital
+                solutions. My current focus is on developing user-friendly, accessible products with a human-centric
+                approach.
+            </p>
+
+            <a href="#work"
+                class="border border-green text-green px-7 py-4 rounded font-mono text-sm hover:bg-green-tint transition-colors duration-300 w-max">
+                Check out my work!
+            </a>
+        </section>
+
+        <section id="about" class="py-24">
+            <h2 class="text-2xl font-bold mb-12 text-light-slate flex items-center">
+                <span class="text-green font-mono text-xl mr-2">01.</span> About Me
+            </h2>
+            <div class="md:flex items-start">
+                <div class="md:w-3/5 pr-8">
+                    <p class="mb-4">I'm a full stack developer driven by a deep passion
+                        for crafting exceptional digital
+                        experiences.
+                        Functionality is just the foundation. I build innovative products that prioritize accessibility,
+                        ensuring everyone can enjoy a seamless user journey. Every line of code I write is focused on
+                        creating interfaces that are usable by all, regardless of ability. Accessibility isn't an
+                        afterthought; it's ingrained in my development process.</p>
+
+                    <p class="mb-4">However, inclusivity is only part of the equation. Technology should empower us, not
+                        just automate
+                        tasks. That's why I'm dedicated to human-centered design. I immerse myself in user needs,
+                        understanding their frustrations and aspirations. My goal is to craft intuitive experiences that
+                        feel natural and engaging, an extension of the user them self.</p>
+                    The greatest satisfaction comes from
+                    transforming raw ideas into products that not only work flawlessly but also delight and simplify
+                    user journeys. In a world overflowing with digital experiences, I strive to create those that rise
+                    above - not just for technical prowess, but for their ability to connect with users on a human
+                    level.
+                    </p>
+                    <p class="mb-4">
+                        Here are a few technologies I've been working with recently:
+                    </p>
+                    <ul class="grid grid-cols-2 gap-2 mb-8 font-mono text-sm">
+                        <li class="flex items-center"><span class="text-green mr-2">▹</span> JavaScript</li>
+                        <li class="flex items-center"><span class="text-green mr-2">▹</span> React</li>
+                        <li class="flex items-center"><span class="text-green mr-2">▹</span> Node.js</li>
+                        <li class="flex items-center"><span class="text-green mr-2">▹</span> HTML</li>
+                        <li class="flex items-center"><span class="text-green mr-2">▹</span> Python</li>
+                        <li class="flex items-center"><span class="text-green mr-2">▹</span> SQL</li>
+                        <li class="flex items-center"><span class="text-green mr-2">▹</span> PostgresSQL</li>
+                    </ul>
+                </div>
+                <div class="md:w-2/5 mt-8 md:mt-0">
+                    <div class="relative group w-64 h-64 mx-auto">
+                        <div
+                            class="absolute -inset-0.5 bg-green opacity-50 rounded-lg blur group-hover:opacity-75 transition duration-300">
+                        </div>
+                        <img src="./Assets/about.jpg" alt="Saitabau Dennis"
+                            class="relative rounded-lg grayscale hover:grayscale-0 transition-all duration-300 w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- <section id="experience" class="py-24">
+            <h2 class="text-2xl font-bold mb-12 text-light-slate flex items-center">
+                <span class="text-green font-mono text-xl mr-2">02.</span> Where I've Worked
+            </h2>
+            <!-- Add your work experience here
+        </section>-->
+
+        <section id="work" class="py-24">
+            <h2 class="text-2xl font-bold mb-12 text-light-slate flex items-center">
+                <span class="text-green font-mono text-xl mr-2">03.</span> Some Things I've Built
+            </h2>
+            <div class="space-y-24">
+                <div class="relative md:flex md:items-center">
+                    <div class="md:w-7/12 relative z-10">
+                        <img src="./assets/e-shopper.png" alt="e-Shopper" class="rounded-lg shadow-xl">
+                    </div>
+                    <div class="md:w-5/12 md:absolute md:right-0 bg-navy p-6 rounded-lg shadow-xl mt-4 md:mt-0">
+                        <h3 class="text-green font-mono text-sm text-right mb-2">Featured Project</h3>
+                        <h4 class="text-2xl font-bold text-light-slate mb-4">e-Shopper</h4>
+                        <p class="mb-4 bg-navy-light p-6 rounded-lg">
+                            Your fashion hub! Discover trendy apparel for every occasion. Shop hassle-free, stay
+                            stylish, and keep up with the latest fashion trends.
+                        </p>
+                        <ul class="flex justify-end space-x-4 text-sm font-mono mb-4">
+                            <li>Html</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <div class="flex justify-end space-x-4">
+                            <a href="https://github.com/Saitabau-Dennis/e-Shopper"
+                                class="text-light-slate hover:text-green"><i class="fab fa-github text-xl"></i></a>
+                            <a href="https://capstone-project-sigma-five.vercel.app/"
+                                class="text-light-slate hover:text-green"><i
+                                    class="fas fa-external-link-alt text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section id="contact" class="py-24">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-green font-mono text-sm mb-4">04. What's Next?</h2>
+                <h3 class="text-4xl font-bold mb-4 text-light-slate">Get In Touch</h3>
+                <p class="mb-8">
+                    I'm currently looking for any new opportunities, my inbox is always open. Whether you have a
+                    question or just want to say hi, I'll try my best to get back to you!
+                </p>
+                <a href="mailto:dennisntete28@gmail.com"
+                    class="border border-green text-green px-8 py-4 rounded font-mono text-sm hover:bg-green-tint transition-colors duration-300">
+                    Say Hello
+                </a>
+            </div>
+        </section>
+    </main>
+
+
+
+    <div class="fixed left-10 bottom-0 hidden lg:block">
+        <ul
+            class="flex flex-col items-center space-y-5 after:content-[''] after:block after:w-px after:h-24 after:bg-slate">
+            <li><a href="https://github.com/Saitabau-Dennis"
+                    class="text-slate hover:text-green transform hover:-translate-y-1 transition-all duration-300"
+                    target="_blank" rel="noopener noreferrer"><i class="fab fa-github text-xl"></i></a></li>
+            <li><a href="https://www.instagram.com/saitabau__"
+                    class="text-slate hover:text-green transform hover:-translate-y-1 transition-all duration-300"
+                    target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram text-xl"></i></a></li>
+            <li><a href="https://twitter.com/isthat_saita"
+                    class="text-slate hover:text-green transform hover:-translate-y-1 transition-all duration-300"
+                    target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter text-xl"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/saitabau-dennis-115133280"
+                    class="text-slate hover:text-green transform hover:-translate-y-1 transition-all duration-300"
+                    target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in text-xl"></i></a></li>
+            <li><a href="https://codepen.io/dennis-ntete"
+                    class="text-slate hover:text-green transform hover:-translate-y-1 transition-all duration-300"
+                    target="_blank" rel="noopener noreferrer"><i class="fab fa-codepen text-xl"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="fixed right-10 bottom-0 hidden lg:block">
+        <div
+            class="flex flex-col items-center space-y-5 after:content-[''] after:block after:w-px after:h-24 after:bg-slate">
+            <a href="mailto:your.email@example.com"
+                class="text-slate hover:text-green font-mono text-xs tracking-widest transform hover:-translate-y-1 transition-all duration-300 vertical-rl">
+                dennisntete28@gmail.com
+            </a>
         </div>
     </div>
-    <main class="flex-grow flex h-screen">
-        <aside class=" p-4 flex flex-col w-1/2 h-screen sticky top-0">
-            <div class="pt-20 pl-36  justify-start text-left">
-                <h1 class="text-white space-y-2 text-5xl font-disp font-bold">Saitabau Dennis</h1>
-                <h2 class="text-crimson-red text-lg mt-2  font-bold font-display">Full Stack Developer</h2>
-                <p class="text-white text-s leading-relaxed mt-2 font-disp">
-                    Versatile Full Stack Developer <br> building dynamic web applications.
-                </p>
-            </div>
-            <div class="pt-16 pl-36  space-y-4 text-white text-xs justify-start text-left font-dis font-semibold">
-                <div class="text-white"><a href="#about">ABOUT</a></div>
-                <div class="text-white"><a href="#experience">EXPERIENCE</a></div>
-                <div class="text-white "><a href="#projects">PROJECTS</a></div>
-                <div class="text-white "><a href="#contact">CONTACT</a></div>
-            </div>
-            <div class="mt-auto flex justify-start space-x-7 text-left pb-28 pl-36">
-                <a href=" #"><i class="fab fa-instagram text-white  text-2xl"></i></a>
-                <a href="https://github.com/Saitabau-Dennis"><i class="fab fa-github text-white text-2xl"></i></a>
-                <a href="#"><i class="fab fa-twitter text-white text-2xl"></i></a>
-                <a href="https://www.linkedin.com/in/saitabau-dennis-115133280"><i
-                        class="fab fa-linkedin text-white text-2xl"></i></a>
-                <a href="https://codepen.io/dennis-ntete"><i class="fab fa-codepen text-white text-2xl"></i></a>
-                <a href="mailto:dennisntete28@gmail.com"><i class="fas fa-envelope text-white text-2xl"></i></a>
+    <footer class="bg-navy py-8 text-center text-sm font-mono">
+        <a href="https://github.com/Saitabau-Dennis" class="text-slate hover:text-green">Designed & Built by Saitabau
+            Dennis</a>
+    </footer>
 
-            </div>
-        </aside>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('menu');
+            const navLinks = document.querySelectorAll('.nav-link');
 
-        <div class="flex-1 overflow-auto">
-            <div class=" flex-col justify-center text-left font-disp text-white pt-28 pr-32" id="about">
-                <p class="mb-4">I'm a full stack developer driven by a deep passion
-                    for crafting exceptional digital
-                    experiences.
-                    Functionality is just the foundation. I build innovative products that prioritize accessibility,
-                    ensuring everyone can enjoy a seamless user journey. Every line of code I write is focused on
-                    creating interfaces that are usable by all, regardless of ability. Accessibility isn't an
-                    afterthought; it's ingrained in my development process.</p>
+            function toggleMenu() {
+                menu.classList.toggle('translate-x-full');
+            }
 
-                <p class="mb-4">However, inclusivity is only part of the equation. Technology should empower us, not
-                    just automate
-                    tasks. That's why I'm dedicated to human-centered design. I immerse myself in user needs,
-                    understanding their frustrations and aspirations. My goal is to craft intuitive experiences that
-                    feel natural and engaging, an extension of the user them self.</p>
-                The greatest satisfaction comes from
-                transforming raw ideas into products that not only work flawlessly but also delight and simplify
-                user journeys. In a world overflowing with digital experiences, I strive to create those that rise
-                above - not just for technical prowess, but for their ability to connect with users on a human
-                level.
-                </p>
-                <button class=" animated-button mt-4 bg-crimson-red text-white font-bold py-2 px-4 rounded">
-                    RESUME
-                </button>
-            </div>
-            <div class="flex items-start space-x-4 pt-20 pr-32" id="projects">
-                <div class="w-5/5">
-                    <img src="./assets/v1.png" alt="v1" class="w-full h-auto">
-                </div>
-                <div class="flex-grow text-left font-disp">
-                    <button class="mb-1 text-white font-bold">Portfolio V1 <i class="fas fa-arrow-up"
-                            style="transform: rotate(45deg);"></i></button>
-                    <p class="leading-relaxed text-sm text-white mt-2">A showcase of my work as a Full
-                        Stack Developer, this portfolio
-                        highlights my expertise in building dynamic and accessible web applications. Using technologies
-                        like HTML, Tailwind CSS, and JavaScript, I ensure a seamless experience across all devices
-                        through responsive design. The interactive UI engages users with a dynamic interface crafted
-                        using modern JavaScript frameworks, while accessibility is prioritized to create an inclusive
-                        experience for all users.</p>
-                </div>
-            </div>
-            <div class="flex items-start space-x-4 pt-20 pr-32">
-                <div class="w-4/5">
-                    <img src="./assets/e-shopper.png" alt="e-shopper" class="w-full h-auto">
-                </div>
-                <div class="flex-grow text-left font-disp">
-                    <button class="mb-4 text-white font-bold hover:text-red-500">e-Shopper <i class="fas fa-arrow-up"
-                            style="transform: rotate(45deg);"></i></button>
-                    <p class="leading-relaxed text-sm text-white">e-Shopper: Your fashion hub!
-                        Discover trendy apparel for every occasion. Shop hassle-free, stay stylish, and keep up with the
-                        latest fashion trends—all at e-Shopper.</p>
-                </div>
-            </div>
+            function closeMenu() {
+                menu.classList.add('translate-x-full');
+            }
 
+            if (menuToggle && menu) {
+                menuToggle.addEventListener('click', toggleMenu);
 
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="script.js"></script>
+                // Close menu when clicking outside
+                document.addEventListener('click', (event) => {
+                    const isClickInside = menu.contains(event.target) || menuToggle.contains(event.target);
+                    if (!isClickInside && !menu.classList.contains('translate-x-full')) {
+                        closeMenu();
+                    }
+                });
+
+                // Close menu when resizing to larger screen
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768 && !menu.classList.contains('translate-x-full')) {
+                        closeMenu();
+                    }
+                });
+
+                // Handle nav link clicks
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+
+                        if (targetElement) {
+                            closeMenu();
+                            setTimeout(() => {
+                                targetElement.scrollIntoView({
+                                    behavior: 'smooth'
+                                });
+                            }, 300); // Wait for menu close animation
+                        }
+                    });
+                });
+            }
+        });
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Particles.js configuration
+      // Particles.js configuration
+      particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#64ffda" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: false, anim: { enable: false } },
+                size: { value: 3, random: true, anim: { enable: false } },
+                line_linked: { enable: true, distance: 150, color: "#64ffda", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
 
 </html>
